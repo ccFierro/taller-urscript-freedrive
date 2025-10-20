@@ -1,0 +1,8 @@
+<rtde_config>
+  <recipe key="state">
+        <field name="timestamp" type="DOUBLE"/>
+        <field name="actual_q" type="VECTOR6D"/>
+        <field name="actual_TCP_pose" type="VECTOR6D"/>
+        <field name="robot_status_bits" type="UINT32"/>
+  </recipe>
+</rtde_config>
