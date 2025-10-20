@@ -1,4 +1,4 @@
- #Taller_FreeDrive — Documentación por secciones
+# Taller_FreeDrive — Documentación por secciones
 
 > **Objetivo:** GUI para manipular un UR (URScript + RTDE) en un taller educativo: activar *Freedrive*, guardar poses TCP, registrar acciones del *gripper* Robotiq y ejecutar una rutina combinada.
 
