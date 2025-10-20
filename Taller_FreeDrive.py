@@ -2,13 +2,6 @@
 Taller_FreeDrive (versión organizada y limpia)
 ------------------------------------------------
 Propósito: GUI simple para manipular un UR (Freedrive, guardar poses, acciones de gripper y ejecutar rutina).
-
-Cambios respecto al original (SIN modificar lógica/flujo):
-- Limpieza de librerías no utilizadas: se removió matplotlib, numpy, json, scrolledtext y duplicados de messagebox/ttk.
-- Orden del archivo por secciones claras (config, helpers, URScript, RTDE, GUI).
-- Comentarios y docstrings en puntos clave para facilitar mantenimiento.
-- Nombres de variables de botones más consistentes (evitar sobrescribir `btn_on`).
-- Mantiene compatibilidad con `urscripts.py` y `control_loop_configuration.xml` sin tocarlos.
 """
 # -*- coding: utf-8 -*-
 
@@ -628,6 +621,7 @@ threading.Thread(target=read_rtde_thread, daemon=True).start()
 # Cierre seguro
 ventana.protocol("WM_DELETE_WINDOW", al_cerrar)
 ventana.mainloop()
+
 
 
 # ▲▲========================================================▲▲
