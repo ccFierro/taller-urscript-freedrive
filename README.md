@@ -1,4 +1,4 @@
- Taller_FreeDrive — Documentación por secciones
+ #Taller_FreeDrive — Documentación por secciones
 
 > **Objetivo:** GUI para manipular un UR (URScript + RTDE) en un taller educativo: activar *Freedrive*, guardar poses TCP, registrar acciones del *gripper* Robotiq y ejecutar una rutina combinada.
 
@@ -182,40 +182,3 @@ def rtde_connect():
 
 ---
 
-## 9) Flujo de uso (para estudiantes)
-
-1. **Freedrive** → mover manualmente el cobot.  
-2. **Guardar Posición** para registrar una pose (sale de freedrive).  
-3. **Abrir/Cerrar Pinza** según corresponda; **Guardar Acción**.  
-4. Repetir 2–3 hasta completar la secuencia.  
-5. **Ejecutar** para reproducir la rutina completa.  
-6. **Detener** para detener un movimiento en curso si es necesario.  
-
----
-
-## 10) Empaquetado y despliegue
-
-- **Dependencias:** `ttkbootstrap`, `Pillow`, `ur-rtde`.  
-- **Archivos externos requeridos:**  
-  - `control_loop_configuration.xml` (recetas RTDE)  
-  - `fondo.png` (UI)  
-  - `urscripts.py` (macros URScript)  
-- **PyInstaller:** asegurarse de incluir ambos recursos (usar `--add-data "control_loop_configuration.xml;." --add-data "fondo.png;."`).
-
----
-
-## 11) Resolución de problemas
-
-- **No conecta RTDE:** validar IP, ping, versión de UR, receta `"state"` en el XML.  
-- **URScript no ejecuta:** revisar que `s_cobotStart` incluya definiciones de macros (`rq_*`) en `urscripts.py`.  
-- **GUI “congelada”:** evitar operaciones bloqueantes en *threads* y mantener `sleep` pequeños.  
-- **Freedrive no cambia de color:** `robot_status_bits` puede variar por versión; ajustar condiciones `s==5/7` y `s==1/3`.
-
----
-
-## 12) Puntos de extensión (para futuras iteraciones)
-
-- Extraer `robot_io.py` (URScript/RTDE) y `ui.py`.  
-- Añadir `logging` a archivo con niveles (INFO/WARN/ERROR).  
-- Modo *simulación* (generar `tcp_pos` sintético si falla RTDE).  
-- Validaciones en `ejecutar_rutina` (límites de articulaciones, zonas seguras, etc.).
